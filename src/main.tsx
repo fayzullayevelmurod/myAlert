@@ -16,6 +16,7 @@ const theme = extendTheme({
   colors: {
     transparent: "transparent",
     brand: {
+      base: "#F55B3D",
       500: "linear-gradient(90deg, #F14141 -0.39%, #FC8935 123.79%)",
     },
     black: {
@@ -24,7 +25,9 @@ const theme = extendTheme({
       2: "#A0AEC0",
       3: "#1A202C",
       4: "#919EAB",
+      5: "#637381",
     },
+    bg: "#F6F7F8",
   },
 });
 

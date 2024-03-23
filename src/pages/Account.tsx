@@ -1,12 +1,21 @@
-import { DeleteIcon } from "@chakra-ui/icons";
-import { Button, Flex, Stack, Text } from "@chakra-ui/react";
+import { Flex, Stack, Text } from "@chakra-ui/react";
+import assets from "../assets";
+import { Avito, ButtonComponent } from "../components";
 
 interface DataItem {
   name: string;
   date: string;
 }
 
-const data: DataItem[] = [{ name: "Brand Jewelry Studio", date: "12.03.24" }];
+const data: DataItem[] = [
+  { name: "Brand Jewelry Studio", date: "12.03.24" },
+  { name: "Brand Studio", date: "12.03.24" },
+  { name: "Jewelry", date: " 12.03.24" },
+  { name: "Brand Jewelry Studio", date: "12.03.24" },
+  { name: "Brand Studio", date: "12.03.24" },
+  { name: "Brand Studio", date: "12.03.24" },
+  { name: "Jewelry", date: "12.03.24" },
+];
 
 const Account = () => {
   return (
@@ -20,9 +29,12 @@ const Account = () => {
           borderRadius="xl"
           p={6}
         >
-          <Text fontSize="18px" lineHeight="22px" fontWeight={600}>
-            {item.name}
-          </Text>
+          <Flex alignItems="center" gap={6}>
+            <Avito leftIcon={assets.avitoLogo} text="Авито" />
+            <Text fontSize="18px" lineHeight="22px" fontWeight={600}>
+              {item.name}
+            </Text>
+          </Flex>
           <Flex gap={6} alignItems="center">
             <Text
               fontSize="sm"
@@ -32,13 +44,13 @@ const Account = () => {
             >
               Подключен {item.date}
             </Text>
-            <Button
-              leftIcon={<DeleteIcon color="text.4" />}
+            <ButtonComponent
+              icon={assets.trashLogo}
               colorScheme="gray"
               size="xs"
-            >
-              Удалить
-            </Button>
+              text="Удалить"
+              color="#919EAB"
+            />
           </Flex>
         </Flex>
       ))}

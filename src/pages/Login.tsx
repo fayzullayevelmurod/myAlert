@@ -22,13 +22,13 @@ const Login = () => {
     >
       <Flex gap={{ base: "40px", desktop: "76px" }} alignItems="center" pr={20}>
         <Box
-          maxW={{ base: "100%", sm: "458px", desktop: "695px" }}
+          maxW={{ base: "full", sm: "458px", desktop: "695px" }}
           maxH="1043px"
           position="relative"
         >
           <Image
-            w="100%"
-            h="100%"
+            w="full"
+            h="full"
             src={assets.loginBanner}
             borderRadius={{ base: "18px", sm: "30px" }}
           />
@@ -75,7 +75,12 @@ const Login = () => {
           >
             Запомнить меня
           </Checkbox>
-          <ButtonComponent text={"Далее"} size={"lg"} colorScheme={"brand"} />
+          <ButtonComponent
+            text={"Далее"}
+            width="full"
+            size={"lg"}
+            colorScheme={"brand"}
+          />
         </Box>
       </Flex>
     </Box>

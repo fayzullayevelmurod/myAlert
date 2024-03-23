@@ -2,7 +2,6 @@ import { Box, Flex, Heading, Image, Stack, Text } from "@chakra-ui/react";
 import assets from "../assets";
 import { Link, useLocation } from "react-router-dom";
 import { ButtonComponent, NavigationLink } from ".";
-
 export default function Sidebar() {
   const location = useLocation();
 
@@ -33,6 +32,11 @@ export default function Sidebar() {
           <Stack spacing={1}>
             <NavigationLink
               to="/"
+              text="Мои аккаунты"
+              activeclass={`${
+                location.pathname === "/" ? "active" : ""
+              } sidebar-nav-link`}
+              icon={""}
               svg={
                 <svg
                   width="24"
@@ -52,10 +56,6 @@ export default function Sidebar() {
                   />
                 </svg>
               }
-              text="Мои аккаунты"
-              activeclass={`${
-                location.pathname === "/" ? "active" : ""
-              } sidebar-nav-link`}
             />
             <NavigationLink
               to="/connectors"
@@ -81,6 +81,7 @@ export default function Sidebar() {
                   ? "active"
                   : ""
               } sidebar-nav-link`}
+              icon={""}
             />
           </Stack>
         </Box>
@@ -117,6 +118,9 @@ export default function Sidebar() {
               text="Написать"
               width="full"
               colorScheme="brand"
+              leftIcon={null}
+              to={""}
+              color={"white"}
             />
           </Box>
           <ButtonComponent
@@ -124,9 +128,10 @@ export default function Sidebar() {
             text="Выйти из профиля"
             colorScheme="gray"
             color="#919EAB"
-            size={"sm"}
-            w="full"
+            size="sm"
+            width="full"
             to="/login"
+            leftIcon={null}
           />
         </Box>
       </Flex>

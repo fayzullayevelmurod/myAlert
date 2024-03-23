@@ -23,8 +23,9 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
   };
   useEffect(() => {
     setOpenSidebar(false);
-    if (openSidebar === false) {
-      const sidebarElement = document.querySelector(".left-sidebar");
+    const sidebarElement = document.querySelector(".left-sidebar");
+
+    if (sidebarElement) {
       document.body.classList.remove("scroll-hidden");
       sidebarElement.classList.remove("active");
     }

@@ -37,7 +37,7 @@ const Connectors = () => {
                 color="#919EAB"
                 size="xs"
                 text="Изменить"
-                to="/editting-adding"
+                to="editting-adding"
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -112,7 +112,7 @@ const Connectors = () => {
                 color="#919EAB"
                 size="xs"
                 text="Изменить"
-                to="/editting-adding"
+                to="editting-adding"
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -167,7 +167,7 @@ const Connectors = () => {
                 color="#919EAB"
                 size="xs"
                 text="Изменить"
-                to="/editting-adding"
+                to="editting-adding"
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -242,7 +242,7 @@ const Connectors = () => {
                 color="#919EAB"
                 size="xs"
                 text="Изменить"
-                to="/editting-adding"
+                to="editting-adding"
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">

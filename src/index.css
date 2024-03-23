@@ -45,6 +45,16 @@ input[type="checkbox"]:checked+span {
   background: #919EAB3D;
 }
 
+.sidebar-nav-link.active {
+  background: #F55B3D14;
+  color: #F55B3D;
+  font-weight: 600;
+}
+
+.sidebar-nav-link.active svg path {
+  fill: #F55B3D;
+}
+
 @media screen and (max-width: 1000px) {
   header .page-title {
     font-size: 28px;

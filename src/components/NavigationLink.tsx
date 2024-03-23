@@ -6,22 +6,12 @@ interface NavigationLinkProps {
   icon: string;
   text: string;
   badgeCount?: string;
+  class?: string;
+  svg: string
 }
 
-const ActiveStyle = {
-  bg: "#F55B3D14",
-  color: "brand.base",
-  fontWeight: 600,
-};
-
 export const NavigationItem: React.FC<{ to: string }> = ({ to, children }) => {
-  const location = useLocation();
-
-  return (
-    <NavLink to={to} activeclassname="active">
-      {children}
-    </NavLink>
-  );
+  return <NavLink to={to}>{children}</NavLink>;
 };
 
 export const NavigationLink: React.FC<NavigationLinkProps> = ({
@@ -29,21 +19,27 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
   icon,
   text,
   badgeCount,
+  activeclass,
+  svg
 }) => {
+  console.log(activeclass);
+
   return (
     <NavigationItem to={to}>
       <Flex
         p={3}
+        className={activeclass}
         gap={4}
         justifyContent="space-between"
         alignItems="center"
         borderRadius="lg"
         _hover={{ bg: "#F55B3D14", color: "brand.base" }}
-        activeclassname="active"
-        {...(to === "/" && ActiveStyle)}
       >
         <Flex alignItems="center" gap="20px">
           <Image src={icon} />
+          <div>
+            {svg}
+          </div>
           <Text fontSize="sm" lineHeight="22px">
             {text}
           </Text>

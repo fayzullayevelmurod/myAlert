@@ -19,7 +19,7 @@ export const SendCode = () => {
   const [countdown, setCountdown] = useState(36);
 
   useEffect(() => {
-    let timer;
+    let timer: number | undefined;
     if (showResendMessage) {
       timer = setInterval(() => {
         setCountdown((prevCount) => {
@@ -40,20 +40,27 @@ export const SendCode = () => {
     setShowResendMessage(true);
   };
 
-  const inputs = useRef([]);
+  const inputs = useRef<(HTMLInputElement | null)[]>([]);
 
   useEffect(() => {
     if (inputs.current[0]) {
-      inputs.current[0].focus();
+      inputs.current[0]?.focus();
     }
   }, []);
 
-  const handleChange = (index, e) => {
+  const handleChange = (
+    index: number,
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const value = e.target.value;
-    if (value.length >= 1 && index < inputs.current.length - 1) {
-      inputs.current[index + 1].focus();
-    } else if (value.length >= 1) {
-      e.target.value = value.slice(0, 1);
+    if (
+      value.length === 1 &&
+      index < inputs.current.length - 1 &&
+      inputs.current[index + 1]
+    ) {
+      inputs.current[index + 1]?.focus();
+    } else if (value.length === 0 && index > 0 && inputs.current[index - 1]) {
+      inputs.current[index - 1]?.focus();
     }
   };
 
@@ -124,7 +131,7 @@ export const SendCode = () => {
             colorScheme="transparent"
             padding={0}
             h="fit-content"
-            mb={8}
+            mb={{ base: "20px", desktop: 8 }}
           >
             <Link to="/login">Назад</Link>
           </Button>

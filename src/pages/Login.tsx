@@ -9,20 +9,8 @@ import {
 } from "@chakra-ui/react";
 import assets from "../assets";
 import { ButtonComponent } from "../components";
-import { useState } from "react";
 
 export const Login = () => {
-  const phoneNumberRegex = /^\+7 \(\d{3}\) \d{3} - \d{2} - \d{2}$/;
-
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(false);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const inputValue = event.target.value;
-    setPhoneNumber(inputValue);
-    setIsValidPhoneNumber(phoneNumberRegex.test(inputValue));
-    console.log(inputValue);
-  };
   return (
     <Box
       backgroundColor="white"
@@ -33,7 +21,7 @@ export const Login = () => {
       marginBottom={{ base: "56px", sm: "40px", desktop: 8 }}
       width="full"
       backgroundImage={{ base: assets.loginBanner, md: "none" }}
-      py={{ base: "126px", md: "auto" }}
+      py={{ base: "126px", md: "0" }}
     >
       <Image
         w={{ base: "219px", md: "full" }}
@@ -104,18 +92,7 @@ export const Login = () => {
           <Text lineHeight={6} mb={1} color="black.1">
             Телефон
           </Text>
-          <Input
-            type="number"
-            placeholder="+7 (___) ___ - __ - __"
-            size="lg"
-            value={phoneNumber}
-            onChange={handleChange}
-          />
-          {isValidPhoneNumber ? (
-            <p style={{ color: "green" }}>Valid phone number</p>
-          ) : (
-            <p style={{ color: "red" }}>Invalid phone number</p>
-          )}
+          <Input type="number" placeholder="+7 (___) ___ - __ - __" size="lg" />
           <Checkbox
             size="sm"
             colorScheme="brand"

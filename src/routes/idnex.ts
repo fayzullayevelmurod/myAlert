@@ -5,7 +5,7 @@ const EditingAdding = lazy(() => import("../pages/EditingAdding"));
 
 const coreRoutes = [
   {
-    path: "/account",
+    path: "/",
     title: "Text",
     component: Account,
   },
@@ -15,7 +15,7 @@ const coreRoutes = [
     component: Connectors,
   },
   {
-    path: "/editting-adding",
+    path: "connectors/editting-adding",
     title: "Text",
     component: EditingAdding,
   },

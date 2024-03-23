@@ -289,7 +289,6 @@ const EditingAdding = () => {
           width={{ base: "full", sm: "fit-content" }}
           icon={assets.saveIcon}
           size={{ base: "lg", sm: "md" }}
-          to="/editting-adding"
         />
       </Flex>
     </>

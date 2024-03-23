@@ -64,7 +64,7 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
               leftIcon={<AddIcon />}
               text={"Добавить"}
               width={"fit-content"}
-              to="/editting-adding"
+              to="/connectors/editting-adding"
             />
           ) : null // Agar addBtn false bo'lsa, hech narsa ko'rinmaydi
         }

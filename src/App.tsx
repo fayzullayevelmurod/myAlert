@@ -4,7 +4,7 @@ import { Flex } from "@chakra-ui/react";
 import { DefaultLayout } from "./layout/DefaultLayout";
 import Account from "./pages/Account";
 import { Suspense } from "react";
-import Login from "./pages/Login";
+import { Login, SendCode } from "./pages";
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
           })}
         </Route>
         <Route path="/login" element={<Login />} />
+        <Route path="/login/send-code" element={<SendCode />} />
       </Routes>
     </Flex>
   );

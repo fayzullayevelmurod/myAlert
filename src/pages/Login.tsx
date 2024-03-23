@@ -9,8 +9,20 @@ import {
 } from "@chakra-ui/react";
 import assets from "../assets";
 import { ButtonComponent } from "../components";
+import { useState } from "react";
 
-const Login = () => {
+export const Login = () => {
+  const phoneNumberRegex = /^\+7 \(\d{3}\) \d{3} - \d{2} - \d{2}$/;
+
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [isValidPhoneNumber, setIsValidPhoneNumber] = useState(false);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputValue = event.target.value;
+    setPhoneNumber(inputValue);
+    setIsValidPhoneNumber(phoneNumberRegex.test(inputValue));
+    console.log(inputValue);
+  };
   return (
     <Box
       backgroundColor="white"
@@ -19,29 +31,56 @@ const Login = () => {
       marginLeft={{ base: "20px", sm: "32px", desktop: "49px" }}
       marginRight={{ base: "20px", sm: "32px", desktop: 10 }}
       marginBottom={{ base: "56px", sm: "40px", desktop: 8 }}
+      width="full"
+      backgroundImage={{ base: assets.loginBanner, md: "none" }}
+      py={{ base: "126px", md: "auto" }}
     >
-      <Flex gap={{ base: "40px", desktop: "76px" }} alignItems="center" pr={20}>
+      <Image
+        w={{ base: "219px", md: "full" }}
+        h={{ base: "63px", md: "full" }}
+        src={assets.myAlertLogo}
+        mb={6}
+        display={{ base: "block", md: "none" }}
+        mx="auto"
+      />
+      <Flex
+        gap={{ base: "40px", desktop: "76px" }}
+        alignItems="center"
+        pr={{ base: "0", md: 10, desktop: 20 }}
+        position="relative"
+        flexDir={{ base: "column", md: "row" }}
+      >
         <Box
-          maxW={{ base: "full", sm: "458px", desktop: "695px" }}
-          maxH="1043px"
+          maxW={{ base: "full", md: "458px", desktop: "695px" }}
+          maxH={{ base: "auto", md: "1043px" }}
           position="relative"
+          display={{ base: "none", md: "block" }}
         >
           <Image
             w="full"
             h="full"
             src={assets.loginBanner}
             borderRadius={{ base: "18px", sm: "30px" }}
+            display={{ base: "none", md: "block" }}
           />
           <Box
-            position="absolute"
-            top="50%"
+            position={{ base: "relative", md: "absolute" }}
+            top={{ base: "156px", md: "50%" }}
             left="50%"
             transform="translate(-50%, -50%)"
           >
-            <Image src={assets.myAlertLogo} />
+            <Image
+              w={{ base: "219px", md: "full" }}
+              h={{ base: "63px", md: "full" }}
+              src={assets.myAlertLogo}
+            />
           </Box>
         </Box>
-        <Box flex={1} maxW="500px">
+        <Box
+          flex={1}
+          maxW={{ base: "full", md: "500px" }}
+          className="login-content"
+        >
           <Flex
             justifyContent={"center"}
             alignItems={"center"}
@@ -58,13 +97,25 @@ const Login = () => {
             fontWeight="bold"
             my={{ base: "20px", desktop: 8 }}
             color="black.base"
+            whiteSpace="nowrap"
           >
             Вход в аккаунт
           </Heading>
           <Text lineHeight={6} mb={1} color="black.1">
             Телефон
           </Text>
-          <Input placeholder="+7 (___) ___ - __ - __" size="lg" />
+          <Input
+            type="number"
+            placeholder="+7 (___) ___ - __ - __"
+            size="lg"
+            value={phoneNumber}
+            onChange={handleChange}
+          />
+          {isValidPhoneNumber ? (
+            <p style={{ color: "green" }}>Valid phone number</p>
+          ) : (
+            <p style={{ color: "red" }}>Invalid phone number</p>
+          )}
           <Checkbox
             size="sm"
             colorScheme="brand"
@@ -80,10 +131,10 @@ const Login = () => {
             width="full"
             size={"lg"}
             colorScheme={"brand"}
+            to="/login/send-code"
           />
         </Box>
       </Flex>
     </Box>
   );
 };
-export default Login;

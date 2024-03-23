@@ -14,7 +14,7 @@ export default function Sidebar() {
         px={4}
         minW={{ base: "100%", sm: "250px", md: "280px", desktop: "280px" }}
         maxW={{ base: "100%", sm: "250px", md: "280px", desktop: "280px" }}
-        minH="100vh"
+        minH={{ base: "95vh", sm: "100vh" }}
         h="100%"
       >
         <Box>

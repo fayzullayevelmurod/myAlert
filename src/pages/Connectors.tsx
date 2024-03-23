@@ -38,6 +38,8 @@ const Connectors = () => {
                 size="xs"
                 text="Изменить"
                 to="editting-adding"
+                colorScheme={"gray"}
+                leftIcon={null}
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -113,6 +115,8 @@ const Connectors = () => {
                 size="xs"
                 text="Изменить"
                 to="editting-adding"
+                colorScheme={"gray"}
+                leftIcon={null}
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -168,6 +172,8 @@ const Connectors = () => {
                 size="xs"
                 text="Изменить"
                 to="editting-adding"
+                colorScheme={"gray"}
+                leftIcon={null}
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">
@@ -243,6 +249,8 @@ const Connectors = () => {
                 size="xs"
                 text="Изменить"
                 to="editting-adding"
+                colorScheme={"gray"}
+                leftIcon={null}
               />
             </Flex>
             <FormControl width="fit-content" display="flex" alignItems="center">

@@ -156,7 +156,7 @@ export const SendCode = () => {
             Вход в аккаунт
           </Heading>
           <Text lineHeight={6} mb={1} color="black.1" fontWeight={500}>
-            На ваш номер телефона придёт СМС с кодом, введите его
+            На ваш номер телефона придёт СМС с кодом, введите его
           </Text>
           <Flex gap="6px">
             {[0, 1, 2, 3, 4, 5].map((index) => (

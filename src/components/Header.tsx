@@ -1,6 +1,5 @@
-import { Box, Flex, Heading, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Image } from "@chakra-ui/react";
 import { AddIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
-import { ButtonComponent } from ".";
 import { useEffect, useState } from "react";
 import assets from "../assets";
 import { useLocation } from "react-router-dom";
@@ -67,14 +66,13 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
       >
         <Heading className="page-title">{text}</Heading>
         {addBtn ? (
-          <ButtonComponent
+          <Button
+            leftIcon={<AddIcon />}
             colorScheme={"brand"}
             size={{ base: "xs", md: "sm", desktop: "md" }}
-            leftIcon={<AddIcon />}
-            text={"Добавить"}
-            width={"fit-content"}
-            to="/connectors/editting-adding"
-          />
+          >
+            Добавить
+          </Button>
         ) : null}
       </Flex>
     </header>

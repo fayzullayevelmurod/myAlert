@@ -5,6 +5,7 @@ interface AvitoProps {
   leftIcon?: string;
   rightIcon?: string;
   color?: string;
+  display?: { base: string; xs: string; xl: string };
 }
 
 export const Avito: React.FC<AvitoProps> = ({
@@ -12,6 +13,7 @@ export const Avito: React.FC<AvitoProps> = ({
   leftIcon,
   rightIcon,
   color,
+  display,
   ...rest
 }) => {
   return (
@@ -23,6 +25,7 @@ export const Avito: React.FC<AvitoProps> = ({
       gap={1}
       py={2}
       px={{ base: 3, desktop: 4 }}
+      display={display}
     >
       {leftIcon && <Image src={leftIcon} />}
       <Text

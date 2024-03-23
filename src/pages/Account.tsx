@@ -32,7 +32,7 @@ const Account = () => {
             justifyContent="space-between"
           >
             <Flex
-              flexDirection={{ base: "column", xs: " row" }}
+              flexDir={{ base: "column", xs: "row" }}
               alignItems={{ base: "start", xs: "center" }}
               gap={{ base: "20px", desktop: 6 }}
             >
@@ -65,6 +65,8 @@ const Account = () => {
                 size="xs"
                 text="Удалить"
                 color="#919EAB"
+                to={""}
+                leftIcon={null}
               />
             </Flex>
           </Flex>

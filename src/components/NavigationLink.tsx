@@ -67,8 +67,8 @@ interface NavigationLinkProps {
   icon: string;
   text: string;
   badgeCount?: string;
-  activeclass?: string; // activeclass o'zgaruvchisini qo'shildi
-  svg: JSX.Element; // svg JSX.Element qilib o'zgartirildi
+  activeclass?: string;
+  svg: JSX.Element;
 }
 
 export const NavigationItem: React.FC<{

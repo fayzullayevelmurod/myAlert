@@ -280,15 +280,13 @@ const EditingAdding = () => {
           variant="outline"
           text="Удалить навсегда"
           color="black.5"
-          width={{ base: "full", sm: "fit-content" }}
-        />
+          width={{ base: "full", sm: "fit-content" }} to={""} />
         <ButtonComponent
           colorScheme={"brand"}
           text={"Добавить"}
           width={{ base: "full", sm: "fit-content" }}
           icon={assets.saveIcon}
-          size={{ base: "lg", sm: "md" }}
-        />
+          size={{ base: "lg", sm: "md" }} to={""} color={"white"}/>
       </Flex>
     </>
   );

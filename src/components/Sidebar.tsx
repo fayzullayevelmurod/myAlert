@@ -5,12 +5,6 @@ import { ButtonComponent, NavigationLink } from ".";
 
 export default function Sidebar() {
   const location = useLocation();
-  console.log(location.pathname == "/");
-  const ActiveStyle = {
-    bg: "#F55B3D14",
-    color: "brand.base",
-    fontWeight: 600,
-  };
 
   return (
     <Box className="left-sidebar">

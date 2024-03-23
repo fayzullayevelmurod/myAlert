@@ -1,11 +1,15 @@
 import { Button, Image } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
-
+0;
 interface ButtonComponentProps {
   text: string;
   icon?: string;
   rightIcon?: string;
-  to: string,
+  to: string;
+  colorScheme: string;
+  width?: string;
+  size: { base: string; md: string; desktop: string };
+  leftIcon?: React.ReactNode;
 }
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({

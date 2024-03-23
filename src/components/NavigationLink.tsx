@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Flex, Image, Box, Text } from "@chakra-ui/react";
 
 interface NavigationLinkProps {
@@ -7,7 +7,7 @@ interface NavigationLinkProps {
   text: string;
   badgeCount?: string;
   class?: string;
-  svg: string
+  svg: string;
 }
 
 export const NavigationItem: React.FC<{ to: string }> = ({ to, children }) => {
@@ -20,10 +20,8 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
   text,
   badgeCount,
   activeclass,
-  svg
+  svg,
 }) => {
-  console.log(activeclass);
-
   return (
     <NavigationItem to={to}>
       <Flex
@@ -37,9 +35,7 @@ export const NavigationLink: React.FC<NavigationLinkProps> = ({
       >
         <Flex alignItems="center" gap="20px">
           <Image src={icon} />
-          <div>
-            {svg}
-          </div>
+          <div>{svg}</div>
           <Text fontSize="sm" lineHeight="22px">
             {text}
           </Text>

@@ -126,7 +126,7 @@ const Connectors = () => {
               >
                 Отключено
               </FormLabel>
-              <Switch size="lg" isChecked id="email-alerts" />
+              <Switch size="lg" id="email-alerts" />
             </FormControl>
           </Flex>
           <Flex flexWrap="wrap" borderTop="1px solid #EEEFF0" pt="20px" gap={6}>
@@ -256,7 +256,7 @@ const Connectors = () => {
               >
                 Отключено
               </FormLabel>
-              <Switch size="lg" isChecked id="email-alerts" />
+              <Switch size="lg" id="email-alerts" />
             </FormControl>
           </Flex>
           <Flex flexWrap="wrap" borderTop="1px solid #EEEFF0" pt="20px" gap={6}>

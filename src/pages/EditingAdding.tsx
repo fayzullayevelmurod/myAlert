@@ -284,7 +284,6 @@ const EditingAdding = () => {
         />
         <ButtonComponent
           colorScheme={"brand"}
-          size={"md"}
           text={"Добавить"}
           width={{ base: "full", sm: "fit-content" }}
           icon={assets.saveIcon}

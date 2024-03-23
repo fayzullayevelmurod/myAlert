@@ -1,0 +1,22 @@
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  background-color: #F6F7F8 !important;
+}
+
+.gradient-bg {
+  background: linear-gradient(90deg, #F14141 0%, #FC8935 81.01%);
+}
+
+input[type="checkbox"]:checked+span {
+  background: #F55B3D !important;
+  border-color: #F55B3D !important;
+}
+
+.page-title {
+  font-family: "Inter", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43.2px;
+  color: #000;
+}

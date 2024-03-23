@@ -1,8 +1,9 @@
 import { Box, Flex, Heading, Image } from "@chakra-ui/react";
 import { AddIcon, CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import { ButtonComponent } from ".";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import assets from "../assets";
+import { useLocation } from "react-router-dom";
 
 interface IHeader {
   text: string;
@@ -11,15 +12,23 @@ interface IHeader {
 
 export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false);
-
+  const location = useLocation();
   const handleOpenSidebar = () => {
-    setOpenSidebar(!openSidebar);
     const sidebarElement = document.querySelector(".left-sidebar");
+    setOpenSidebar(!openSidebar);
     if (sidebarElement) {
       document.body.classList.toggle("scroll-hidden");
       sidebarElement.classList.toggle("active");
     }
   };
+  useEffect(() => {
+    setOpenSidebar(false);
+    if (openSidebar === false) {
+      const sidebarElement = document.querySelector(".left-sidebar");
+      document.body.classList.remove("scroll-hidden");
+      sidebarElement.classList.remove("active");
+    }
+  }, [location]);
 
   return (
     <header>
@@ -56,18 +65,16 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
         mb={{ base: "20px", sm: 6, desktop: "37px" }}
       >
         <Heading className="page-title">{text}</Heading>
-        {
-          addBtn ? (
-            <ButtonComponent
-              colorScheme={"brand"}
-              size={{ base: "xs", md: "sm", desktop: "md" }}
-              leftIcon={<AddIcon />}
-              text={"Добавить"}
-              width={"fit-content"}
-              to="/connectors/editting-adding"
-            />
-          ) : null // Agar addBtn false bo'lsa, hech narsa ko'rinmaydi
-        }
+        {addBtn ? (
+          <ButtonComponent
+            colorScheme={"brand"}
+            size={{ base: "xs", md: "sm", desktop: "md" }}
+            leftIcon={<AddIcon />}
+            text={"Добавить"}
+            width={"fit-content"}
+            to="/connectors/editting-adding"
+          />
+        ) : null}
       </Flex>
     </header>
   );

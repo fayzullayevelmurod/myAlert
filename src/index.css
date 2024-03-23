@@ -4,6 +4,10 @@ body {
   background-color: #F6F7F8 !important;
 }
 
+body.scroll-hidden {
+  overflow: hidden;
+}
+
 .gradient-bg {
   background: linear-gradient(90deg, #F14141 0%, #FC8935 81.01%);
 }
@@ -39,4 +43,38 @@ input[type="checkbox"]:checked+span {
   width: 1px;
   height: 100%;
   background: #919EAB3D;
+}
+
+@media screen and (max-width: 1000px) {
+  header .page-title {
+    font-size: 28px;
+    line-height: 33px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  header .page-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .card-box {
+    padding: 20px;
+  }
+
+  .left-sidebar {
+    position: absolute;
+    top: 50px;
+    left: -100%;
+    width: 280px;
+    min-height: 100%;
+    background: #fff;
+    z-index: 100;
+    transition: 0.3s ease;
+  }
+
+  .left-sidebar.active {
+    left: 0;
+
+  }
 }

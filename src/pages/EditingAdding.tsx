@@ -214,6 +214,7 @@ const EditingAdding = () => {
           width={"fit-content"}
           icon={assets.saveIcon}
           size="md"
+          to="editting-adding"
         />
       </Flex>
     </>

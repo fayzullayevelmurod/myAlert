@@ -12,6 +12,8 @@ const theme = extendTheme({
   },
   breakpoints: {
     desktop: "62.5em",
+    tablet: "885px",
+    sm: "640px",
   },
   colors: {
     transparent: "transparent",

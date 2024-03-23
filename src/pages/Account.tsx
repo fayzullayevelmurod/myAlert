@@ -1,6 +1,6 @@
 import { Flex, Stack, Text } from "@chakra-ui/react";
 import assets from "../assets";
-import { Avito, ButtonComponent } from "../components";
+import { Avito, ButtonComponent, Header } from "../components";
 
 interface DataItem {
   name: string;
@@ -19,42 +19,54 @@ const data: DataItem[] = [
 
 const Account = () => {
   return (
-    <Stack spacing={4}>
-      {data.map((item, index) => (
-        <Flex
-          justifyContent="space-between"
-          alignItems="center"
-          key={index}
-          bg="white"
-          borderRadius="xl"
-          p={6}
-        >
-          <Flex alignItems="center" gap={6}>
-            <Avito leftIcon={assets.avitoLogo} text="Авито" />
-            <Text fontSize="18px" lineHeight="22px" fontWeight={600}>
-              {item.name}
-            </Text>
-          </Flex>
-          <Flex gap={6} alignItems="center">
-            <Text
-              fontSize="sm"
-              lineHeight="17px"
-              fontWeight={400}
-              color="black.4"
+    <>
+      <Header text="Мои аккаунты" addBtn={true} />
+      <Stack spacing={4}>
+        {data.map((item, index) => (
+          <Flex
+            flexWrap="wrap"
+            gap={4}
+            flexDirection={{ base: "column", tablet: "row" }}
+            className="card-box"
+            key={index}
+            justifyContent="space-between"
+          >
+            <Flex alignItems="center" gap={{ base: "20px", desktop: 6 }}>
+              <Avito leftIcon={assets.avitoLogo} text="Авито" />
+              <Text
+                fontSize={{ base: "15px", sm: "base", dektop: "lg" }}
+                lineHeight="22px"
+                fontWeight={600}
+              >
+                {item.name}
+              </Text>
+            </Flex>
+            <Flex
+              justifyContent={{ base: "space-between", tablet: "normal" }}
+              gap={{ base: "20px", desktop: 6 }}
+              alignItems="center"
             >
-              Подключен {item.date}
-            </Text>
-            <ButtonComponent
-              icon={assets.trashLogo}
-              colorScheme="gray"
-              size="xs"
-              text="Удалить"
-              color="#919EAB"
-            />
+              <Text
+                // fontSize={{ base: "15px", sm: "xs", dektop: "100px" }}
+                fontSize={{ base: "10px", sm: "xs", desktop: "16px" }}
+                lineHeight={{ base: "14px", desktop: "17px" }}
+                fontWeight={400}
+                color="black.4"
+              >
+                Подключен {item.date}
+              </Text>
+              <ButtonComponent
+                icon={assets.trashLogo}
+                colorScheme="gray"
+                size="xs"
+                text="Удалить"
+                color="#919EAB"
+              />
+            </Flex>
           </Flex>
-        </Flex>
-      ))}
-    </Stack>
+        ))}
+      </Stack>
+    </>
   );
 };
 

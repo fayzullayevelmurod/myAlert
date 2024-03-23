@@ -75,6 +75,9 @@ input[type="checkbox"]:checked+span {
 
   .left-sidebar.active {
     left: 0;
+  }
 
+  .card-box {
+    padding: 20px;
   }
 }

@@ -5,7 +5,7 @@ interface ButtonComponentProps {
   text: string;
   icon?: string;
   rightIcon?: string;
-  to: string
+  to: string,
 }
 
 export const ButtonComponent: React.FC<ButtonComponentProps> = ({

@@ -10,14 +10,14 @@ import {
   Switch,
   Text,
 } from "@chakra-ui/react";
-import { Avito, ButtonComponent } from "../components";
+import { Avito, ButtonComponent, Header } from "../components";
 import assets from "../assets";
-import { SmallCloseIcon } from "@chakra-ui/icons";
 
 const EditingAdding = () => {
   return (
     <>
-      <Stack spacing={2} bg="white" p={6} borderRadius="xl">
+      <Header text="Редактирование /  добавление" addBtn={false} />
+      <Stack className="card-box">
         <Box>
           <Flex gap={2} alignItems="center">
             <Flex
@@ -44,14 +44,19 @@ const EditingAdding = () => {
           </Flex>
           <Flex
             className="line-box"
-            alignItems="center"
-            gap={4}
+            alignItems={{ base: "end", tablet: "center" }}
+            justifyContent={{ base: "end", tablet: "start" }}
+            gap={{ base: 3, sm: 4 }}
             pl={8}
-            pt={6}
+            pt={{ base: 3, sm: 4 }}
             mt={2}
-            pb={8}
+            pb={{ base: 4, sm: 6, desktop: 8 }}
+            flexWrap="wrap"
           >
-            <Select size="lg" w="500px">
+            <Select
+              size={{ base: "sm", sm: "lg" }}
+              w={{ base: "100%", tablet: "500px" }}
+            >
               <option value="Brand Jewelry Studio">Brand Jewelry Studio</option>
               <option value="option2">Option 2</option>
               <option value="option3">Option 3</option>
@@ -91,22 +96,44 @@ const EditingAdding = () => {
               Настройте подключение
             </Heading>
           </Flex>
-          <Stack spacing={4} className="line-box" pl={8} pt={4} mt={2} pb={8}>
+          <Stack
+            spacing={{ base: 3, sm: 4 }}
+            className="line-box"
+            pl={8}
+            mt={2}
+            pt={{ base: 3, sm: 4 }}
+            pb={{ base: 4, sm: 6, desktop: 8 }}
+          >
             <Box>
-              <Text mb={1} color="black.1">
+              <Text
+                mb={1}
+                color="black.1"
+                fontSize={{ base: "sm", sm: "15px", desktop: "16px" }}
+              >
                 Стратегия
               </Text>
-              <Select size="lg" w="500px">
+              <Select
+                size={{ base: "sm", sm: "lg" }}
+                w={{ base: "100%", tablet: "500px" }}
+              >
                 <option>Пропущенные сообщения</option>
                 <option value="option2">Option 2</option>
                 <option value="option3">Option 3</option>
               </Select>
             </Box>
             <Box>
-              <Text mb={1} color="black.1">
+              <Text
+                mb={1}
+                color="black.1"
+                fontSize={{ base: "sm", sm: "15px", desktop: "16px" }}
+              >
                 Сообщение считается пропущенным через
               </Text>
-              <Input width="500px" placeholder="20 мин." size="lg" />
+              <Input
+                w={{ base: "100%", tablet: "500px" }}
+                placeholder="20 мин."
+                size={{ base: "sm", sm: "lg" }}
+              />
             </Box>
             <FormControl display="flex" gap={3} alignItems="center">
               <Switch id="email-alerts" isChecked />
@@ -114,6 +141,8 @@ const EditingAdding = () => {
                 userSelect="none"
                 htmlFor="email-alerts"
                 color="black.1"
+                fontWeight={400}
+                fontSize={{ base: "sm", sm: "16px" }}
                 ml="0"
                 mb="0"
               >
@@ -121,13 +150,33 @@ const EditingAdding = () => {
               </FormLabel>
             </FormControl>
             <Box>
-              <Text mb={1} color="black.1">
+              <Text
+                mb={1}
+                color="black.1"
+                fontSize={{ base: "sm", sm: "15px", desktop: "16px" }}
+              >
                 Рабочие часы
               </Text>
-              <Flex alignItems="center" maxW="500px">
-                <Input width="full" placeholder="10:00" size="lg" />
-                <Box w="20px" h="1px" bg="#E2E8F0" mx={3} />
-                <Input width="full" placeholder="10:00" size="lg" />
+              <Flex
+                alignItems="center"
+                maxW={{ base: "100%", tablet: "500px" }}
+              >
+                <Input
+                  w={{ base: "62px", xs: "full" }}
+                  placeholder="10:00"
+                  size={{ base: "sm", sm: "lg" }}
+                />
+                <Box
+                  w={{ base: 4, sm: "20px" }}
+                  h="1px"
+                  bg="#E2E8F0"
+                  mx={{ base: 2, md: 3 }}
+                />
+                <Input
+                  w={{ base: "62px", xs: "full" }}
+                  placeholder="10:00"
+                  size={{ base: "sm", sm: "lg" }}
+                />
               </Flex>
             </Box>
           </Stack>
@@ -156,15 +205,26 @@ const EditingAdding = () => {
               Аккаунты для получения уведомлений
             </Heading>
           </Flex>
-          <Stack pb={6} spacing={4} className="line-box" pl={8} mt={2} pt={4}>
+          <Stack
+            pt={{ base: 3, sm: 4 }}
+            pb={{ base: 4, sm: 6, desktop: 6 }}
+            spacing={4}
+            className="line-box"
+            pl={8}
+            mt={2}
+          >
             <Box>
-              <Text mb={1} color="black.1">
+              <Text
+                mb={1}
+                color="black.1"
+                fontSize={{ base: "sm", sm: "15px", desktop: "16px" }}
+              >
                 Добавленные аккаунты
               </Text>
               <Flex
                 gap="10px"
                 flexWrap="wrap"
-                width="500px"
+                w={{ base: "100%", tablet: "500px" }}
                 border="1px solid #E2E8F0"
                 borderRadius="md"
                 py="10px"
@@ -191,30 +251,45 @@ const EditingAdding = () => {
               </Flex>
             </Box>
             <Box>
-              <Text mb={1} color="black.1">
+              <Text
+                mb={1}
+                color="black.1"
+                fontSize={{ base: "sm", sm: "15px", desktop: "16px" }}
+              >
                 Добавление аккаунта
               </Text>
-              <Input width="500px" placeholder="t.me@" size="lg" />
+              <Input
+                w={{ base: "100%", tablet: "500px" }}
+                placeholder="t.me@"
+                size={{ base: "sm", sm: "lg" }}
+              />
             </Box>
           </Stack>
         </Box>
       </Stack>
-      <Flex gap={3} justifyContent="end" mt={8} mb="45px">
+      <Flex
+        gap={{ base: 2, sm: 3 }}
+        flexDir={{ base: "column", sm: "row" }}
+        justifyContent="end"
+        mt={{ base: "20px", sm: 8 }}
+        mb="45px"
+      >
         <ButtonComponent
-          size="md"
+          size={{ base: "lg", sm: "md" }}
           icon={assets.trashLogo}
           variant="outline"
           text="Удалить навсегда"
           color="black.5"
+          width={{ base: "full", sm: "fit-content" }}
         />
         <ButtonComponent
           colorScheme={"brand"}
           size={"md"}
           text={"Добавить"}
-          width={"fit-content"}
+          width={{ base: "full", sm: "fit-content" }}
           icon={assets.saveIcon}
-          size="md"
-          to="editting-adding"
+          size={{ base: "lg", sm: "md" }}
+          to="/editting-adding"
         />
       </Flex>
     </>

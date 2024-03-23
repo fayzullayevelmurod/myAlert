@@ -11,9 +11,10 @@ const theme = extendTheme({
     heading: "Inter, sans-serif",
   },
   breakpoints: {
-    desktop: "62.5em",
+    desktop: "1000px",
     tablet: "885px",
     sm: "640px",
+    xs: "480px",
   },
   colors: {
     transparent: "transparent",

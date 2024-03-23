@@ -31,7 +31,11 @@ const Account = () => {
             key={index}
             justifyContent="space-between"
           >
-            <Flex alignItems="center" gap={{ base: "20px", desktop: 6 }}>
+            <Flex
+              flexDirection={{ base: "column", xs: " row" }}
+              alignItems={{ base: "start", xs: "center" }}
+              gap={{ base: "20px", desktop: 6 }}
+            >
               <Avito leftIcon={assets.avitoLogo} text="Авито" />
               <Text
                 fontSize={{ base: "15px", sm: "base", dektop: "lg" }}

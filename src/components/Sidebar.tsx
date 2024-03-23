@@ -23,7 +23,7 @@ export default function Sidebar() {
               mb={8}
               mx="auto"
               src={assets.logo}
-              w={{ base: "100px", descktop: "184px" }}
+              maxW={{ base: "100px", sm: "184px" }}
               height={{ base: "30px", sm: "54px" }}
               display={{ base: "none", sm: "block" }}
             />

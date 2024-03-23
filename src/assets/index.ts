@@ -15,6 +15,7 @@ import blueTelegramIcon from "./icons/telegram-2.svg";
 import smallNextIcon from "./icons/smal-next.svg";
 import closeIcon from "./icons/close-icon.svg";
 import saveIcon from "./icons/save-icon.svg";
+import mediaNextIcon from "./icons/media-next.svg";
 export default {
   loginBanner,
   callIcon,
@@ -33,4 +34,5 @@ export default {
   smallNextIcon,
   closeIcon,
   saveIcon,
+  mediaNextIcon,
 };

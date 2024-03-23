@@ -23,7 +23,8 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
 
   return (
     <header>
-      <Flex
+      <Box
+        display={{ base: "flex", sm: "none" }}
         justifyContent="space-between"
         alignItems="center"
         className="header-top"
@@ -47,7 +48,7 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
           onClick={handleOpenSidebar}
           display={openSidebar ? "block" : "none"}
         />
-      </Flex>
+      </Box>
 
       <Flex
         justifyContent="space-between"
@@ -55,16 +56,18 @@ export const Header: React.FC<IHeader> = ({ text, addBtn }) => {
         mb={{ base: "20px", sm: 6, desktop: "37px" }}
       >
         <Heading className="page-title">{text}</Heading>
-        {addBtn ? (
-          <ButtonComponent
-            colorScheme={"brand"}
-            size={{ base: "xs", md: "sm", desktop: "md" }}
-            leftIcon={<AddIcon />}
-            text={"Добавить"}
-            width={"fit-content"}
-            to="editting-adding"
-          />
-        ) : null}
+        {
+          addBtn ? (
+            <ButtonComponent
+              colorScheme={"brand"}
+              size={{ base: "xs", md: "sm", desktop: "md" }}
+              leftIcon={<AddIcon />}
+              text={"Добавить"}
+              width={"fit-content"}
+              to="/editting-adding"
+            />
+          ) : null // Agar addBtn false bo'lsa, hech narsa ko'rinmaydi
+        }
       </Flex>
     </header>
   );
